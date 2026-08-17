@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+}
+
+.dashboard {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.event-form {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.event-form input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+    gap: 20px;
+}
+
+.event-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.event-card h3 {
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.countdown div {
+    text-align: center;
+    padding: 10px;
+    background: #f1f3f5;
+    border-radius: 8px;
+}
+
+.countdown strong {
+    display: block;
+    font-size: 25px;
+}
+
+.countdown span {
+    font-size: 12px;
+}
+
+.delete-btn {
+    margin-top: 10px;
+}
+
+.expired {
+    padding: 15px;
+    text-align: center;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-box {
+    width: 350px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.auth-box h2 {
+    text-align: center;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+}
+
+.auth-box button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.empty {
+    text-align: center;
+    padding: 40px;
+}
