@@ -39,8 +39,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
-
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -120,6 +118,10 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://event-countdown-timer-vyx5.vercel.app",
+]
+
+CSRF_TRUSTED_ORIGINS = [
     "https://event-countdown-timer-vyx5.vercel.app",
 ]
 
