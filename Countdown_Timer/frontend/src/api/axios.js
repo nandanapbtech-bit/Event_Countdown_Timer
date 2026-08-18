@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://127.0.0.1:8000/api/",
+    baseURL: "https://event-countdown-timer-rs4f.onrender.com/api/",
     headers: {
         "Content-Type": "application/json",
     },
@@ -53,7 +53,7 @@ API.interceptors.response.use(
             try {
 
                 const response = await axios.post(
-                    "http://127.0.0.1:8000/api/token/refresh/",
+                    "https://event-countdown-timer-rs4f.onrender.com/api/token/refresh/",
                     {
                         refresh: refreshToken,
                     }
