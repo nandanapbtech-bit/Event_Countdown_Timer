@@ -12,54 +12,53 @@ function EventCard({ event, onDelete }) {
 
     const [isDeleting, setIsDeleting] = useState(false);
 
-    const calculateTime = () => {
+    useEffect(() => {
 
-        const target = new Date(
-            event.target_date
-        ).getTime();
+        const calculateTime = () => {
 
-        const now = new Date().getTime();
+            const target = new Date(
+                event.target_date
+            ).getTime();
 
-        const difference = target - now;
+            const now = new Date().getTime();
 
-        if (difference <= 0) {
+            const difference = target - now;
+
+            if (difference <= 0) {
+
+                setTimeLeft({
+                    days: 0,
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0
+                });
+
+                return;
+            }
+
+            const days = Math.floor(
+                difference / (1000 * 60 * 60 * 24)
+            );
+
+            const hours = Math.floor(
+                (difference / (1000 * 60 * 60)) % 24
+            );
+
+            const minutes = Math.floor(
+                (difference / (1000 * 60)) % 60
+            );
+
+            const seconds = Math.floor(
+                (difference / 1000) % 60
+            );
 
             setTimeLeft({
-                days: 0,
-                hours: 0,
-                minutes: 0,
-                seconds: 0
+                days,
+                hours,
+                minutes,
+                seconds
             });
-
-            return;
-        }
-
-        const days = Math.floor(
-            difference / (1000 * 60 * 60 * 24)
-        );
-
-        const hours = Math.floor(
-            (difference / (1000 * 60 * 60)) % 24
-        );
-
-        const minutes = Math.floor(
-            (difference / (1000 * 60)) % 60
-        );
-
-        const seconds = Math.floor(
-            (difference / 1000) % 60
-        );
-
-        setTimeLeft({
-            days,
-            hours,
-            minutes,
-            seconds
-        });
-    };
-
-
-    useEffect(() => {
+        };
 
         calculateTime();
 
@@ -186,12 +185,15 @@ function EventCard({ event, onDelete }) {
                                     timeLeft.days
                                 ).padStart(2, "0")}
                             </strong>
+
                             <span>Days</span>
                         </div>
+
 
                         <div className="time-separator">
                             :
                         </div>
+
 
                         <div className="time-unit">
                             <strong>
@@ -199,12 +201,15 @@ function EventCard({ event, onDelete }) {
                                     timeLeft.hours
                                 ).padStart(2, "0")}
                             </strong>
+
                             <span>Hours</span>
                         </div>
+
 
                         <div className="time-separator">
                             :
                         </div>
+
 
                         <div className="time-unit">
                             <strong>
@@ -212,12 +217,15 @@ function EventCard({ event, onDelete }) {
                                     timeLeft.minutes
                                 ).padStart(2, "0")}
                             </strong>
+
                             <span>Min</span>
                         </div>
+
 
                         <div className="time-separator">
                             :
                         </div>
+
 
                         <div className="time-unit seconds-unit">
                             <strong>
@@ -225,6 +233,7 @@ function EventCard({ event, onDelete }) {
                                     timeLeft.seconds
                                 ).padStart(2, "0")}
                             </strong>
+
                             <span>Sec</span>
                         </div>
 
