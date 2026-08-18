@@ -120,9 +120,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-]
-
-# When your Vercel frontend is deployed, we'll add its URL here.
+    "https://event-countdown-timer-vyx5.vercel.app",
+]# When your Vercel frontend is deployed, we'll add its URL here.
 
 
 # Django REST Framework
